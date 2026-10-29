@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>madeby.Lorenzo — Graphic Design Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&display=swap">
+<style>
+:root{--bg:#f7f1e8;--fg:#1a1412;--mut:#6b5f58;--acc:#d6332b;--line:#1a141222;--l:86%;--s:75%;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15100e;--fg:#f4ece3;--mut:#a69a91;--acc:#ff5a4f;--line:#f4ece322;--l:24%;--s:45%;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15100e;--fg:#f4ece3;--mut:#a69a91;--acc:#ff5a4f;--line:#f4ece322;--l:24%;--s:45%;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Bricolage Grotesque",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;line-height:1.5}
+a{color:inherit}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:var(--bg);border-bottom:1px solid var(--line)}
+nav b{font-size:1.15rem;letter-spacing:-.02em;color:var(--acc)}
+nav div{display:flex;gap:22px;font-size:.9rem}
+nav a{text-decoration:none}nav a:hover{color:var(--acc)}
+.hero{padding:9vh 5vw 6vh}
+.hero h1{font-size:clamp(2.8rem,10vw,8rem);line-height:.92;letter-spacing:-.045em;margin:0;font-weight:800}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.hero p{max-width:34em;font-size:1.15rem;color:var(--mut);margin:28px 0 0}
+.cta{display:inline-block;margin-top:28px;padding:13px 26px;border-radius:99px;background:var(--acc);color:#fff;text-decoration:none;font-weight:600}
+.mq{overflow:hidden;border-block:1px solid var(--line);padding:14px 0;white-space:nowrap}
+.mq span{display:inline-block;padding-left:100%;animation:m 28s linear infinite;font-size:1.3rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+@keyframes m{to{transform:translateX(-100%)}}
+@media (prefers-reduced-motion:reduce){.mq span{animation:none;padding:0}}
+section{padding:8vh 5vw}
+h2{font-size:clamp(1.8rem,5vw,3.2rem);letter-spacing:-.03em;margin:0 0 24px;line-height:1}
+.f{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.f button{font:inherit;font-size:.9rem;padding:8px 18px;border-radius:99px;border:1.5px solid var(--fg);background:none;color:var(--fg);cursor:pointer}
+.f button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.t{aspect-ratio:4/5;border-radius:14px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;background:hsl(var(--h) var(--s) var(--l)) center/cover no-repeat;transition:transform .2s}
+.t:hover{transform:translateY(-4px) rotate(-.5deg)}
+.t small{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;opacity:.7}
+.t strong{font-size:1.7rem;line-height:1;letter-spacing:-.03em}
+.t.im small,.t.im strong{color:#fff;text-shadow:0 1px 8px #0009;opacity:1}
+.cap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px}
+.cap div{border-top:2px solid var(--fg);padding-top:14px}
+.cap h3{margin:0 0 6px;font-size:1.3rem}.cap p{margin:0;color:var(--mut);font-size:.95rem}
+.ab{display:grid;grid-template-columns:1fr 1fr;gap:6vw}
+@media(max-width:720px){.ab{grid-template-columns:1fr}nav div{gap:14px}}
+.ab p{font-size:1.15rem;margin:0 0 1em}
+.ct{background:var(--acc);color:#fff;border-radius:22px;margin:0 5vw 6vh;padding:7vh 5vw}
+.ct h2{font-size:clamp(2.2rem,8vw,6rem)}
+.ct a{font-size:clamp(1.1rem,3vw,1.8rem);font-weight:600}
+footer{padding:0 5vw 40px;color:var(--mut);font-size:.85rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+<nav><b id="brand"></b><div><a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></div></nav>
+
+<header class="hero">
+<h1 id="hl"></h1>
+<p id="intro"></p>
+<a class="cta" href="#work">See the work</a>
+</header>
+
+<div class="mq" aria-hidden="true"><span id="mq"></span></div>
+
+<section id="work">
+<h2>Selected work</h2>
+<div class="f" id="f"></div>
+<div class="g" id="g"></div>
+</section>
+
+<section id="services">
+<h2>What I do</h2>
+<div class="cap" id="svc"></div>
+</section>
+
+<section id="about">
+<div class="ab">
+<h2 id="abh"></h2>
+<div id="abt"></div>
+</div>
+</section>
+
+<div class="ct" id="contact">
+<h2 id="cth"></h2>
+<a id="em"></a><br>
+<a id="ig"></a>
+</div>
+<footer><span id="copy"></span><span id="dom"></span></footer>
+
+<script>
+/* ============================================================
+   EDIT THIS BLOCK ONLY. Replace everything marked [like this].
+   ============================================================ */
+var SITE = {
+  name: "madeby.Lorenzo",
+  domain: "portfolio.madeby.Lorenzo",
+  year: "2026",
+
+  // Hero. Wrap the highlighted words in <em></em>.
+  headline: "[Your big statement,<br>one short line,<br><em>your hook.</em>]",
+  intro: "[One or two sentences: who you are, where you’re based, and who you design for.]",
+
+  // Email and Instagram (leave instagram "" to hide it)
+  email: "[hello@yourdomain.com]",
+  instagram: "[@yourhandle]",
+  instagramUrl: "https://www.instagram.com/[yourhandle]/",
+
+  // Scrolling ticker
+  ticker: ["Brand Identity","Marketing & Advertising","Packaging","Posters"],
+
+  // Services: title + one-line description
+  services: [
+    ["Brand Identity","[Logos, type, color and voice. Describe your approach.]"],
+    ["Marketing & Advertising","[Campaigns, social, print and digital. Describe your approach.]"],
+    ["Packaging","[Concept to dieline to shelf. Describe your approach.]"],
+    ["Posters","[Events, launches, series, prints. Describe your approach.]"]
+  ],
+
+  aboutHeading: "[A line that sums up how you work.]",
+  about: [
+    "[Paragraph 1: your background and what drives your work.]",
+    "[Paragraph 2: how you work with clients and what they can expect.]"
+  ],
+  contactHeading: "Let’s make something."
+};
+
+/* PROJECTS. One line per project. Copy a line to add more.
+   category must be one of the four below, spelled exactly.
+   link:  page or case study URL ("" for none)
+   image: image URL or filename, e.g. "img/oak-park.jpg" ("" for a colored tile)
+   Images load when this file is on your own host (Netlify, etc.) with the images uploaded beside it. */
+var CATEGORIES = ["Brand Identity","Marketing & Advertising","Packaging","Posters"];
+var PROJECTS = [
+  {title:"[Project name]", category:"Brand Identity",          link:"", image:""},
+  {title:"[Project name]", category:"Brand Identity",          link:"", image:""},
+  {title:"[Project name]", category:"Marketing & Advertising", link:"", image:""},
+  {title:"[Project name]", category:"Marketing & Advertising", link:"", image:""},
+  {title:"[Project name]", category:"Packaging",               link:"", image:""},
+  {title:"[Project name]", category:"Packaging",               link:"", image:""},
+  {title:"[Project name]", category:"Posters",                 link:"", image:""},
+  {title:"[Project name]", category:"Posters",                 link:"", image:""}
+];
+/* ============================ END EDIT ============================ */
+
+(function(){
+function $(i){return document.getElementById(i)}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+$("brand").textContent=SITE.name;
+$("hl").innerHTML=SITE.headline;
+$("intro").textContent=SITE.intro;
+var t=SITE.ticker.map(esc).join(" ✿ ");$("mq").innerHTML=t+" ✿ "+t+" ✿ ";
+$("svc").innerHTML=SITE.services.map(function(s){return "<div><h3>"+esc(s[0])+"</h3><p>"+esc(s[1])+"</p></div>"}).join("");
+$("abh").textContent=SITE.aboutHeading;
+$("abt").innerHTML=SITE.about.map(function(p){return "<p>"+esc(p)+"</p>"}).join("");
+$("cth").textContent=SITE.contactHeading;
+$("em").textContent=SITE.email;$("em").href="mailto:"+SITE.email;
+if(SITE.instagram){$("ig").textContent=SITE.instagram;$("ig").href=SITE.instagramUrl}
+$("copy").textContent="© "+SITE.name+" "+SITE.year;$("dom").textContent=SITE.domain;
+document.title=SITE.name+" — Graphic Design Portfolio";
+var f=$("f"),g=$("g"),cur="All",cats=["All"].concat(CATEGORIES);
+function draw(){
+ var h=0;
+ g.innerHTML=PROJECTS.filter(function(p){return cur==="All"||p.category===cur}).map(function(p,i){
+  var inner="<small>"+esc(p.category)+"</small><strong>"+esc(p.title)+"</strong>";
+  var st="--h:"+((i*47)%360)+(p.image?";background-image:url('"+String(p.image).replace(/'/g,"%27")+"')":"");
+  var cls="t"+(p.image?" im":"");
+  return p.link?'<a class="'+cls+'" style="'+st+'" href="'+esc(p.link)+'">'+inner+'</a>':'<div class="'+cls+'" style="'+st+'">'+inner+'</div>';
+ }).join("");
+ f.innerHTML=cats.map(function(c){return '<button aria-pressed="'+(c===cur)+'" data-c="'+esc(c)+'">'+esc(c)+'</button>'}).join("");
+}
+f.addEventListener("click",function(e){var c=e.target.getAttribute("data-c");if(c){cur=c;draw()}});
+draw();
+})();
+</script>
+</body>
+</html>
